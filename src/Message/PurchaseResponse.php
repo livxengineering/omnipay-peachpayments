@@ -4,6 +4,7 @@ namespace Omnipay\PeachPayments\Message;
 
 use Omnipay\Common\Message\AbstractResponse;
 use Omnipay\Common\Message\RequestInterface;
+use Omnipay\Common\Message\RedirectResponseInterface;
 
 /**
  * Peach Payments Charge Token Response
