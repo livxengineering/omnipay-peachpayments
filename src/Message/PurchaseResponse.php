@@ -50,7 +50,7 @@ class PurchaseResponse extends AbstractResponse implements RedirectResponseInter
 
     public function getMessage()
     {
-        if (isset($this->data['result']) {
+        if (isset($this->data['result'])) {
             return $this->data['result']['description'];
         }
 
