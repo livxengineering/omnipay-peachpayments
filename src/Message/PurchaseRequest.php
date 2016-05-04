@@ -124,9 +124,9 @@ class PurchaseRequest extends AbstractRequest
         try {
             $httpResponse = $this->httpClient->post($this->getEndpoint(), null, $data)->send();  
         } catch (\Guzzle\Http\Exception\ClientErrorResponseException $e) {
-           return $this->response = new ChargeTokenResponse($this, null);
+           return $this->response = new PurchaseResponse($this, null);
         }
         
-        return $this->response = new ChargeTokenResponse($this, $httpResponse->json());
+        return $this->response = new PurchaseResponse($this, $httpResponse->json());
     }
 }
