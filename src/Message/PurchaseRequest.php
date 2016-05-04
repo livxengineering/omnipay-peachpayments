@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Payment;
+namespace Omnipay\PeachPayments\Message;
 
 use Omnipay\Common\Message\AbstractRequest;
 
