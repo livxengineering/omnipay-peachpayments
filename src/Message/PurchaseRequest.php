@@ -121,12 +121,19 @@ class PurchaseRequest extends AbstractRequest
 
     public function sendData($data)
     {
+
+        $jsonDataObject = null;
+
         try {
-            $httpResponse = $this->httpClient->post($this->getEndpoint(), null, $data)->send();  
+            $httpResponse = $this->httpClient->post($this->getEndpoint(), null, $data)->send();
+
+            $jsonDataObject = $httpResponse->json();
+
         } catch (\Guzzle\Http\Exception\ClientErrorResponseException $e) {
-           return $this->response = new PurchaseResponse($this, null);
+
+            $jsonDataObject = $e->getResponse()->json();
         }
         
-        return $this->response = new PurchaseResponse($this, $httpResponse->json());
+        return $this->response = new PurchaseResponse($this, $jsonDataObject);
     }
 }

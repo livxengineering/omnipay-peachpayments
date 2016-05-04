@@ -58,5 +58,19 @@ class PurchaseResponse extends AbstractResponse implements RedirectResponseInter
         return null;
     }
 
+    public function getRedirectUrl() {
+
+        return null;
+    }
+
+    public function getRedirectMethod() {
+
+        return null;
+    }
+
+    public function getRedirectData() {
+
+        return null;
+    }
 
 }
