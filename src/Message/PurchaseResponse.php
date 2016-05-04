@@ -29,7 +29,7 @@ class PurchaseResponse extends AbstractResponse implements RedirectResponseInter
             $successCodes = ['000.000.000', '000.100.110', '000.100.111', '000.100.112'];
             $resultCode = $this->data['result']['code'];
 
-            if (in_array($resultCode, $successCodes))
+            if (in_array($resultCode, $successCodes)) {
                 return true;
             }
         }
