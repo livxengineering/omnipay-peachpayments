@@ -1,0 +1,32 @@
+{
+    "name": "livxengineering/omnipay-peachpayments",
+    "type": "library",
+    "description": "Peach Payments Gateway for Omnipay (http://www.peachpayments.com)",
+    "keywords": [
+        "peachpayments",
+        "peach",
+        "gateway",
+        "merchant",
+        "omnipay",
+        "pay",
+        "payment",
+        "purchase"
+    ],
+    "homepage": "https://github.com/livxengineering/omnipay-peachpayments",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "LivX (Pty) Ltd",
+            "email": "devops@livx.tech"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "Omnipay\\PeachPayments\\" : "src/" }
+    },
+    "require": {
+        "omnipay/common": "~2.0"
+    },
+    "require-dev": {
+        "omnipay/tests": "~2.0"
+    }
+}
