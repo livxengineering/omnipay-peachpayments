@@ -92,6 +92,16 @@ class PurchaseRequest extends AbstractRequest
         return $this->setParameter('recurringType', $value);
     }
 
+    public function getMerchantTransactionId()
+    {
+        return $this->getParameter('merchantTransactionId');
+    }
+
+    public function setMerchantTransactionId($value)
+    {
+        return $this->setParameter('merchantTransactionId', $value);
+    }
+
     public function getEndpoint()
     {
         $endpoint = $this->getTestMode() ? $this->testEndpoint : $this->liveEndpoint;
@@ -116,6 +126,12 @@ class PurchaseRequest extends AbstractRequest
         $data['paymentType'] = $this->getPaymentType();
         $data['recurringType'] = $this->getRecurringType();
 
+        // Optional parameters
+        if ($this->getMerchantTransactionId()) {
+            $data['merchantTransactionId'] = $this->getMerchantTransactionId();
+        }
+        
+
         return $data;
     }
 
@@ -126,11 +142,9 @@ class PurchaseRequest extends AbstractRequest
 
         try {
             $httpResponse = $this->httpClient->post($this->getEndpoint(), null, $data)->send();
-
             $jsonDataObject = $httpResponse->json();
 
         } catch (\Guzzle\Http\Exception\ClientErrorResponseException $e) {
-
             $jsonDataObject = $e->getResponse()->json();
         }
         
